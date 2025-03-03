@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 ENV BOT_TOKEN="your-telegram-bot-token"
 
 # Run the bot
-CMD ["python", "bot.py"]
+CMD ["python", "main.py"]
