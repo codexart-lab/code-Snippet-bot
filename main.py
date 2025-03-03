@@ -1,8 +1,13 @@
+import os
+from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
-# Replace with your bot token
-BOT_TOKEN = "7952390055:AAHa-kZFaa5wHfXslql_xPI9bINlHwRWHNU"
+# Load environment variables
+load_dotenv()
+
+# Get the bot token from .env file
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 def start(update: Update, context: CallbackContext) -> None:
     update.message.reply_text("Send me code, and I will format it for easy copying!")
