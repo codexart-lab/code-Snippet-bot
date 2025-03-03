@@ -9,11 +9,11 @@ def start(update: Update, context: CallbackContext) -> None:
 
 def format_code(update: Update, context: CallbackContext) -> None:
     user_code = update.message.text
-    formatted_code = f"\n{user_code}\n``"
+    formatted_code = f"```\n{user_code}\n```"
     update.message.reply_text(formatted_code, parse_mode="Markdown")
 
 def main():
-    updater = Updater(BOT_TOKEN, use_context=True)
+    updater = Updater(BOT_TOKEN)
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("start", start))
@@ -22,3 +22,5 @@ def main():
     updater.start_polling()
     updater.idle()
 
+if __name__ == "__main__":
+    main()
