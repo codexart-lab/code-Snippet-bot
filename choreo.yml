@@ -1,0 +1,7 @@
+services:
+  - name: telegram-bot
+    dockerfile: Dockerfile
+    port: 8080
+    env:
+      - name: BOT_TOKEN
+        value: $BOT_TOKEN  # Use Choreo's environment variable system
